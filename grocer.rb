@@ -18,6 +18,7 @@ def apply_coupons(cart, coupons)
   coupons.each do |coupon|
     coupon.each do |attribute, value|
       name = coupon[:item]
+      binding.pry
       if cart[name] && cart[name][:count] >= coupon[:num]
         if cart["#{name} W/COUPON"] 
           cart["#{name} W/COUPON"][:count] +=1 
@@ -28,7 +29,6 @@ def apply_coupons(cart, coupons)
       end
   end
 end
-binding.pry
 cart 
 end
 
